@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선문대학교 인권상담센터 | 당신의 목소리에 귀 기울입니다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#006A79', // Deep Teal
+                        accent: '#E27D60',  // Soft Coral
+                        background: '#F8FAFC',
+                        surface: '#FFFFFF',
+                        text: '#334155',
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 25px -5px rgba(0, 106, 121, 0.05), 0 8px 10px -6px rgba(0, 106, 121, 0.05)',
+                        'xl-soft': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .reveal-delay-1 { animation-delay: 0.1s; }
+        .reveal-delay-2 { animation-delay: 0.2s; }
+        .reveal-delay-3 { animation-delay: 0.3s; }
+
+        /* Hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .date-card.active {
+            background-color: #006A79;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 106, 121, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/10 selection:text-primary">
+
+    <!-- 1. Header: Minimalist & Clean -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                    <iconify-icon icon="solar:shield-user-bold" class="text-2xl text-primary group-hover:text-white transition-colors"></iconify-icon>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-primary">선문대학교 인권상담센터</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-10 font-semibold text-[15px] text-slate-600">
+                <a href="#" class="hover:text-primary transition-colors">센터소개</a>
+                <a href="#booking" class="hover:text-primary transition-colors">상담신청</a>
+                <a href="#" class="hover:text-primary transition-colors">인권교육</a>
+                <a href="#" class="hover:text-primary transition-colors">커뮤니티</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#booking" class="hidden sm:flex px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">상담 예약하기</a>
+                <button class="md:hidden p-2 text-slate-600">
+                    <iconify-icon icon="solar:hamburger-menu-linear" class="text-2xl"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section: Empathetic & Warm -->
+    <section class="relative pt-40 pb-24 overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-primary/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-accent/5 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm mb-8">
+                    <span class="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+                    <span class="text-sm font-semibold text-slate-500">100% 익명성 보장 안전 상담 서비스</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-[1.15] mb-8">
+                    당신의 목소리에<br>
+                    <span class="text-primary">귀 기울입니다.</span>
+                </h1>
+                <p class="text-xl text-slate-500 leading-relaxed mb-10 max-w-lg">
+                    혼자 고민하지 마세요. 전문 상담사가 당신의 마음을 가장 먼저 생각하며, 안전하고 따뜻한 공간에서 기다리고 있습니다.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#booking" class="px-8 py-4 bg-accent hover:bg-[#d46d50] text-white rounded-2xl font-bold text-lg shadow-xl shadow-accent/20 transition-all hover:-translate-y-1">
+                        상담 예약 시작하기
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all">
+                        이용 안내 보기
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative reveal reveal-delay-2">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl-soft border-8 border-white">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Empathetic Counseling" class="w-full aspect-[4/5] object-cover" />
+                </div>
+                <!-- Floating Info Card -->
+                <div class="absolute -bottom-6 -left-6 z-20 glass-card p-6 rounded-2xl shadow-xl max-w-[240px]">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                            <iconify-icon icon="solar:check-circle-bold" class="text-emerald-600 text-xl"></iconify-icon>
+                        </div>
+                        <span class="font-bold text-slate-800">철저한 비밀 유지</span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-snug">모든 상담 내용은 외부로 유출되지 않으며 안전하게 보호됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Anonymous/Safe Space Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="reveal reveal-delay-1 text-center md:text-left">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <iconify-icon icon="solar:lock-password-bold-duotone" class="text-3xl text-primary"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">익명성 철저 보장</h3>
+                    <p class="text-slate-500 leading-relaxed">상담 신청부터 진행까지 모든 과정에서 개인의 신분과 프라이버시를 최우선으로 보호합니다.</p>
+                </div>
+                <div class="reveal reveal-delay-2 text-center md:text-left">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <iconify-icon icon="solar:medal-ribbon-bold-duotone" class="text-3xl text-primary"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">전문 상담 인력</h3>
+                    <p class="text-slate-500 leading-relaxed">다양한 분야의 풍부한 경험을 가진 전문 상담사들이 체계적이고 전문적인 지원을 제공합니다.</p>
+                </div>
+                <div class="reveal reveal-delay-3 text-center md:text-left">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <iconify-icon icon="solar:heart-bold-duotone" class="text-3xl text-primary"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">심리적 안정 지원</h3>
+                    <p class="text-slate-500 leading-relaxed">단순한 상담을 넘어, 심리적 회복과 치유를 위해 따뜻하고 편안한 환경을 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Step-by-Step Booking (Modern Calendar) -->
+    <section id="booking" class="py-24 bg-background">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">상담 예약하기</h2>
+                <p class="text-slate-500">원하시는 날짜와 시간을 선택해 주세요.</p>
+            </div>
+
+            <!-- Booking Step 1: Date Selection (Horizontal Scroll) -->
+            <div class="mb-12 reveal reveal-delay-1">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="font-bold text-lg text-slate-800 flex items-center gap-2">
+                        <iconify-icon icon="solar:calendar-minimalistic-bold" class="text-primary"></iconify-icon>
+                        날짜 선택
+                    </h3>
+                    <span class="text-sm text-slate-400 font-medium">2023년 11월</span>
+                </div>
+                
+                <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar -mx-2 px-2">
+                    <!-- Date Pill 1 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">월</span>
+                        <span class="text-2xl font-bold">6</span>
+                    </button>
+                    <!-- Date Pill 2 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">화</span>
+                        <span class="text-2xl font-bold">7</span>
+                    </button>
+                    <!-- Date Pill 3 (Active) -->
+                    <button class="date-card active flex-shrink-0 w-20 h-28 rounded-2xl flex flex-col items-center justify-center transition-all">
+                        <span class="text-xs font-medium text-white/70 mb-2">수</span>
+                        <span class="text-2xl font-bold">8</span>
+                    </button>
+                    <!-- Date Pill 4 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">목</span>
+                        <span class="text-2xl font-bold">9</span>
+                    </button>
+                    <!-- Date Pill 5 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">금</span>
+                        <span class="text-2xl font-bold">10</span>
+                    </button>
+                    <!-- Date Pill 6 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">월</span>
+                        <span class="text-2xl font-bold">13</span>
+                    </button>
+                    <!-- Date Pill 7 -->
+                    <button class="date-card flex-shrink-0 w-20 h-28 rounded-2xl bg-white border border-slate-100 flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-xs font-medium text-slate-400 mb-2">화</span>
+                        <span class="text-2xl font-bold">14</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Step 2: Time Selection (Pills) -->
+            <div class="mb-12 reveal reveal-delay-2">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="font-bold text-lg text-slate-800 flex items-center gap-2">
+                        <iconify-icon icon="solar:clock-circle-bold" class="text-primary"></iconify-icon>
+                        시간 선택
+                    </h3>
+                </div>
+                
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">09:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">10:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-primary bg-primary/5 text-sm font-bold text-primary ring-2 ring-primary/20">11:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-100 bg-slate-50 text-sm font-semibold text-slate-300 cursor-not-allowed" disabled>13:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">14:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">15:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">16:00</button>
+                    <button class="py-3 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-all">17:00</button>
+                </div>
+            </div>
+
+            <!-- Booking Step 3: Information Input -->
+            <div class="reveal reveal-delay-3">
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl-soft border border-slate-100">
+                    <form class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700 ml-1">이름</label>
+                                <input type="text" placeholder="성함을 입력해주세요" class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-slate-600">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700 ml-1">학번/사번</label>
+                                <input type="text" placeholder="20231234" class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-slate-600">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 ml-1">연락처</label>
+                            <input type="tel" placeholder="010-0000-0000" class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-slate-600">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 ml-1">상담 내용 (간략히)</label>
+                            <textarea rows="4" placeholder="상담하고 싶은 내용을 자유롭게 적어주세요. (비공개 보장)" class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-slate-600 resize-none"></textarea>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <button type="button" class="w-full py-5 bg-primary text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
+                                예약 확정하기
+                            </button>
+                            <p class="text-center text-xs text-slate-400 mt-6">
+                                <iconify-icon icon="solar:info-circle-linear" class="align-middle mr-1"></iconify-icon>
+                                예약 정보는 암호화되어 안전하게 전송됩니다.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Footer: Minimalist -->
+    <footer class="bg-white py-16 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-primary">
+                        <iconify-icon icon="solar:shield-user-bold" class="text-2xl"></iconify-icon>
+                        <span class="font-bold text-lg tracking-tight">선문대학교 인권상담센터</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        우리는 모든 구성원의 권리를 존중하며, 차별 없는 안전한 캠퍼스를 만들기 위해 존재합니다.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap gap-x-12 gap-y-6 text-sm font-semibold text-slate-600">
+                    <a href="#" class="hover:text-primary transition-colors">이용약관</a>
+                    <a href="#" class="hover:text-primary transition-colors text-primary">개인정보처리방침</a>
+                    <a href="#" class="hover:text-primary transition-colors">오시는 길</a>
+                    <a href="#" class="hover:text-primary transition-colors">센터안내</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between gap-6">
+                <div class="text-xs text-slate-400 space-y-1">
+                    <p>충청남도 아산시 탕정면 선문로221번길 70, 선문대학교 학생회관 2층</p>
+                    <p>Tel: 041-530-2000 | Email: humanrights@sunmoon.ac.kr</p>
+                </div>
+                <p class="text-xs text-slate-300">© 2023 Sunmoon University Human Rights Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
